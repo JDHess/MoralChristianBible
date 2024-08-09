@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Testament Bible</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+        .red { background-color: red; }
+        .yellow { margin-top: 20px; margin-bottom: 20px;}
+        .cardList {
+            display: inline-block;
+            
+            padding: 20px;
+            
+            text-align: justify;
+            text-justify: inter-word;
+        }
+        .cardstyle {
+            margin-top: 20px; margin-bottom: 20px; margin-left: 200px; margin-right: 200px;
+        }
+    </style>
+  </head>
+  <body>
+
+    <a href="./index.html">
+        
+        <div class="p-5 mb-4 bg-light rounded-3 backgroundone d-flex align-items-center">
+          <div class="col-10 mx-auto">
+            <div class="text-center">
+              <h2 class="card-title text-center animate-charcter"><strong>Home</strong></h2> <br>
+              </div>
+          </div>
+        </div>
+          
+    </a>
+
+    <h1 class="text-center">Bible Historical Referance Project</h1>
+
+    <div class="app">
+        <div class="cardstyle">
+            <input type="text" id="searchInput" placeholder="Search cards...">
+            <button id="toggleYellow">Space out text</button>
+            <br>
+            <div class="cardList" id="cardList"></div>
+        </div>
+        
+    </div>
+
+    <script>
+        function CardList(name, email, id) {
+            this.name = name;
+            this.email = email;
+            this.id = id;
+        }
+
+        var appData = {
+            red: false,
+            green: false,
+            blue: false,
+            yellow: false,
+            purple: true,
+            lists: [
+                new CardList("Matthew 1:1", "(The genealogy of Jesus is unusual because it cites women and non-Jews, and suggests morally questionable circumstances) This is the account of Jesus the Messiah (the annointed one), the son of David (this term is never used in the Tanakh (the Hebrew Bible) to refer to a future ideal Davidic king, but it's used in that way in modern Rabbinic liturature. Traditional Jewish belief held that the Messiah would decend from the line of the King of David, perhaps based in the idea of an everlasting line of Davidic Kings) Son of Abraham,", 1),
+                
+                new CardList("Matthew 1:2", "Abraham (who was regarded as the father Judaism in Jewish literature) was the father of Isaac, and Isaac was the father of Jacob, and Jacob the father of Judah and his brothers, (The geneologies of Matthew and Luke are inconsistent)", 2),
+                
+                new CardList("Matthew 1:3", "and Judah the father of Perez and Zerah by Tamar (verious sources consider Tamar to be either a Gentile, someone who converted to Judaism, or an Israelite, she conceives 2 twins with her father-in-law Judah), and Perez the father of Hezron, and Hezron the father of Abram,", 3),
+                
+                new CardList("Matthew 1:4", "and Aram the father of Aminadab, and Aminadab the father of Nahshon, and Nahshon the father of Salmon,", 4),
+                
+                new CardList("Matthew 1:5", "and Salmon the father of Boaz by Rahab (the Canaanite prostitute faithful to Joshua's spies; her family are spared from Jericho's distruction, and she is listed as the wife of Joshua), and Boaz the father of Obed by Ruth (a Moabite woman said to have convertied to Judaism), and Obed the father of Jesse,", 5),
+
+                new CardList("Matthew 1:6", "and Jesse the father of King David. (Bethsheba, who committed adultery with David was the wife of Uriah) And David was the father of Solomon by the wife of Uriah,", 6),
+
+                new CardList("Matthew 1:7", "and Solomon the father of Rehoboam, and Rehoboam the father of Abijah, and Avijah the father of Asaph,", 7),
+
+                new CardList("Matthew 1:8", "and Asaph the father of Jehoshaphat, and Jehoshaphat the father of Joram, and Joram the father of Uzziah,", 8),
+
+                new CardList("Matthew 1:9", "and Uzziah the father of Jotham, and Jotham the father of Ahaz, and Ahaz the father of Hezekiah,", 9),
+
+                new CardList("Matthew 1:10", "and Hezekiah the father of Manasseh, and Menasseh the father of Amos (who's name invokes that of a prophet), and Amos the father of Josiah,", 10),
+
+                new CardList("Matthew 1:11", "and Josiah the father of Jechoniah and his brothers at the time of the deportation to Babylon. (a decade before the distruction of the First Temple)", 11),
+
+                new CardList("Matthew 1:12", "And after the deportation to Babylon: Jechoniah was the father of Salathiel, and Salathiel the father of Zerubbabel, (the Davidic figure that was thought to have built the Second Temple)", 12),
+
+                new CardList("Matthew 1:13", "and Zerubbabel the father of Abiud, and Abiud the father of Eliakim, and Eliakim the father of Azor,", 13),
+
+                new CardList("Matthew 1:14", "and Azor the father of Zadok, and Zadok the fahter of Achim, and Achim the father of Eliud,", 14),
+
+                new CardList("Matthew 1:15", "and Eliud the father of Eleazar, and Eleazar the father of Matthan, and Matthan the father of Jacob,", 15),
+
+                new CardList("Matthew 1:16", "and Jacob the father of Joseph (who was not considered to be Jesus' biological father but his legal parent) the husband of Mary, of whom Jesus was born.", 16),
+
+                new CardList("Matthew 1:17", "So all the generations (Matthew only listed 13 where other sources list 14) from Abraham to David are fourteen generations; and from David to the deportation to Babylon, fourteen generations; and from the deportation to Babylon to the Messiah, fourteen generations.", 17),
+
+                new CardList("Matthew 1:18", "Now the birth of Jesus the messiah took place in this way. When his mother Mary had been engaged to Joseph (a betrothal period which was marked by a marriage contract (that around this period was an agreed upon and arranged around the age of 12 though modern Rabbinic sources don't seem to reflect 1st century practices). The betrothal that took place prior to marriage or the couple living together), but before they lived together, she was found to be with child from the Holy Spirit (God's creative and enduring presence).)", 18),
+
+                new CardList("Matthew 1:19", "Her husband Joseph, being a righteous, just, ethical, and Torah observant man and unwilling to expose her to public disgrace, planned to dismiss (devorce) her quietly.", 19),
+
+                new CardList("Matthew 1:20", "But when he had resolved to do this, an angel of the Lord (a mediater of a prophecy in apocalyptic literature of this time) appeared to him in a dream and said, \"Joseph, son of David, don't be afraid to take Mary as your wife, for the child she conceived is from the Holy Spirit.\"", 20),
+
+                new CardList("Matthew 1:21", "She will bear a son, and you will call him Jesus, for it means \"God saves\" for he will save his people from their sins. (Jews traditionally saw salvation as part of the covenant and understood that continuing divine presence would be a part of the future)", 21),
+
+                new CardList("Matthew 1:22", "All this took place to fulfill what had been spoken by the Lord through the prophet:", 22),
+
+                new CardList("Matthew 1:23", "(Matthew claims fulfillment of Hebrew prophesy, which historians suggest was written after the actual event and was considered to be a writing style. These \"fullfillment citations\" were designed to prove that Jesus was the culmination of Israel's Scripture) \"Look, the virgin shall conceve and bear a son, and they shall name him Emmanuel,\" which means, \"God is with us.\"", 23),
+
+                new CardList("Matthew 1:24", "When Joseph awoke from sleep, he did as the angel of the Lord commanded him; he took her as his wife,", 24), 
+
+                new CardList("Matthew 1:25", "but had no marital relations with her until she had born a son. (The phrase didn't prevent their having relations after Jesus' birth. The view of Mary's never changing verginity develops in the second century, hinting at the Messianic interpretation of James)", 25),
+
+                new CardList("Matthew 2:01", "text", 26),
+
+                new CardList("Matthew 2:02", "text", 27),
+
+                new CardList("Matthew 2:03", "text", 28),
+
+                new CardList("Matthew 2:04", "text", 29),
+
+                new CardList("Matthew 2:05", "text", 30)
+            ],
+            searchCards: ""
+        };
+
+        function divClasses() {
+            return {
+                red: appData.blue,
+                yellow: appData.yellow
+            };
+        }
+
+        function filterCardList() {
+            return appData.lists.filter(function(card) {
+                return card.name.search(new RegExp(appData.searchCards, "i")) > -1;
+            });
+        }
+
+        function changeClassRed_yellow() {
+            appData.yellow = !appData.yellow;
+            renderCardList();
+        }
+
+        function renderCardList() {
+            var cardListDiv = document.getElementById("cardList");
+            cardListDiv.innerHTML = "";
+
+            var filteredCards = filterCardList();
+            filteredCards.forEach(function(card) {
+                var cardDiv = document.createElement("div");
+                cardDiv.textContent = " • " + card.name + " • " + card.email;
+                if (appData.yellow) {
+                    cardDiv.classList.add("yellow");
+                }
+                cardListDiv.appendChild(cardDiv);
+            });
+        }
+
+        document.getElementById("searchInput").addEventListener("input", function(event) {
+            appData.searchCards = event.target.value;
+            renderCardList();
+        });
+
+        document.getElementById("toggleYellow").addEventListener("click", function() {
+            changeClassRed_yellow();
+        });
+
+        // Initial render
+        renderCardList();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+  </body>
+</html>
